@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import BLogPost from "./BLogPost";
 import BlogCard from "./BlogCard";
 import UpdatBlogPost from "./UpdateBlogPost";
+import Loader from "./loader";
 
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
   const [getDATA, setGetDATA] = useState()
   const [ushow, setUShow] = useState(false)
   const [cshow, setCShow] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [uData, setUData] = useState({})
+
   
 
 
@@ -85,6 +88,7 @@ function App() {
 
   };
   const helloget = async () => {
+    setLoading(true)
     const res = await axios.get(
       `https://expertdevelopersblog.vercel.app/api/blog`
     );
@@ -93,6 +97,7 @@ function App() {
 
     console.log(d);
     setGetDATA(d)
+    setLoading(false)
   };
   const hellodel = async (id) => {
     const res = await axios.delete(
@@ -116,6 +121,13 @@ function App() {
 
   return (
     <>
+    {
+      loading &&
+      <div className="w-full h-screen fixed top-0 bg-white justify-center items-center flex ">
+
+       <Loader/>
+      </div>
+    }
     <div className="w-full h-auto ">
       <button className=" bg-white p-4 " onClick={()=> setCShow(!cshow)}>➕</button>
     </div>
