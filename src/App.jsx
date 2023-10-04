@@ -123,7 +123,7 @@ function App() {
     <>
     {
       loading &&
-      <div className="w-full h-screen fixed top-0 bg-white justify-center items-center flex ">
+      <div className="w-full h-screen fixed top-0 bg-white justify-center items-center flex z-50 ">
 
        <Loader/>
       </div>
