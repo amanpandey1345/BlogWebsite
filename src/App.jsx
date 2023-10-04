@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import BLogPost from "./BLogPost";
 import BlogCard from "./BlogCard";
 import UpdatBlogPost from "./UpdateBlogPost";
-import Loader from "./loader";
+import Loader from "./Loader";
 
 
 function App() {
