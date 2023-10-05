@@ -5,6 +5,7 @@ import BLogPost from "./BLogPost";
 import BlogCard from "./BlogCard";
 import UpdatBlogPost from "./UpdateBlogPost";
 import Loader from "./Loader";
+import Cards from "./Cards";
 
 
 function App() {
@@ -121,6 +122,7 @@ function App() {
 
   return (
     <>
+   
     {
       loading &&
       <div className="w-full h-screen fixed top-0 bg-white justify-center items-center flex z-50 ">
